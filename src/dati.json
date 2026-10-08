@@ -1,0 +1,46 @@
+{
+  "_nota": "Tutti i dati dell'azienda stanno qui dentro. Si cambiano qui una volta sola e si aggiornano in tutte le pagine del sito. Poi si rilancia: python build.py",
+
+  "_nota_anteprima": "true = versione di prova: dice a Google di non indicizzare. Quando il sito va sul dominio vero, mettere false e rilanciare build.py",
+  "anteprima": true,
+
+  "azienda": "M-Solar Group Srl",
+  "nome_breve": "M-Solar Group",
+  "claim": "Impianti termici e fotovoltaici",
+  "dominio": "msolargroupsrl.it",
+  "sito": "https://www.msolargroupsrl.it",
+
+  "telefono": "+39 379 150 0777",
+  "telefono_link": "+393791500777",
+  "whatsapp": "393791500777",
+  "email": "info@msolargroupsrl.it",
+  "pec": "[PEC da inserire]",
+
+  "via": "Via Roma [civico da inserire]",
+  "cap": "21047",
+  "citta": "Saronno",
+  "provincia": "VA",
+  "zona": "Nord Italia",
+  "citta_servite": ["Saronno", "Varese", "Como", "Milano", "Monza e Brianza", "Lecco", "Novara"],
+
+  "piva": "[P.IVA da inserire]",
+  "rea": "[REA da inserire]",
+  "capitale": "",
+  "titolare": "Massimiliano Mognoni",
+  "ruolo_titolare": "Termotecnico, fondatore",
+
+  "orari": "Lunedì – Venerdì, 8:30 – 18:30",
+
+  "partner_prodotti": [
+    { "nome": "LG", "cosa": "Pompe di calore Therma V e climatizzazione" },
+    { "nome": "Huawei", "cosa": "Inverter e accumuli per il fotovoltaico" },
+    { "nome": "Caleffi", "cosa": "Componentistica idraulica delle centrali termiche" }
+  ],
+  "partner_finanza": [
+    { "nome": "Cofidis", "cosa": "Finanziamento rateale per i privati" },
+    { "nome": "Grenke", "cosa": "Leasing e noleggio operativo per le aziende" }
+  ],
+
+  "_nota_mail_modulo": "Indirizzo a cui arrivano le richieste del modulo contatti. Ancora da decidere fra Massimiliano e Sagar.",
+  "email_modulo": "info@msolargroupsrl.it"
+}

@@ -1,0 +1,112 @@
+<section class="eroe-interno">
+  <div class="contenitore">
+    <p class="briciole"><a href="index.html">Home</a> &rsaquo; Contatti</p>
+    <p class="occhiello">Contatti</p>
+    <h1>Parliamo del vostro impianto.</h1>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <div class="contatti-griglia">
+
+      <div class="rivela">
+        <p class="guida">Il modo più veloce è il telefono: in dieci minuti capiamo se possiamo esservi utili e cosa serve guardare. Se preferite scrivere, il modulo qui a fianco arriva direttamente a noi.</p>
+
+        <div style="margin-top:34px">
+          <div class="recapito">
+            <span>Telefono</span>
+            <a href="tel:{{TEL_LINK}}">{{TEL}}</a>
+          </div>
+          <div class="recapito">
+            <span>WhatsApp</span>
+            <a href="https://wa.me/{{WHATSAPP}}" rel="noopener">Scriveteci su WhatsApp</a>
+          </div>
+          <div class="recapito">
+            <span>Email</span>
+            <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+          </div>
+          <div class="recapito">
+            <span>Sede</span>
+            <strong>{{VIA}}<br>{{CAP}} {{CITTA}} ({{PROV}})</strong>
+          </div>
+          <div class="recapito">
+            <span>Quando ci siamo</span>
+            <strong>{{ORARI}}</strong>
+          </div>
+          <div class="recapito">
+            <span>Dove lavoriamo</span>
+            <strong>{{ZONA}}</strong>
+          </div>
+        </div>
+
+        <div class="bottoni">
+          <a class="bottone bottone-oro" href="tel:{{TEL_LINK}}">Chiama ora</a>
+          <a class="bottone bottone-chiaro" href="https://wa.me/{{WHATSAPP}}" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="rivela">
+        <div class="scheda" style="padding:clamp(26px,4vw,40px)">
+          <h3 style="margin-bottom:8px">Raccontateci cosa vi serve</h3>
+          <p class="grigio" style="font-size:.95rem;margin-bottom:24px">Più cose ci scrivete, più la prima risposta sarà utile. Il tasto apre la vostra posta con il messaggio già pronto.</p>
+
+          <form data-modulo-mail data-destinatario="{{EMAIL_MODULO}}">
+            <div class="campo-testo">
+              <label for="nome">Nome e cognome</label>
+              <input type="text" id="nome" name="nome" required autocomplete="name">
+            </div>
+
+            <div class="griglia griglia-2" style="gap:18px">
+              <div class="campo-testo">
+                <label for="telefono">Telefono</label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel">
+              </div>
+              <div class="campo-testo">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="campo-testo">
+              <label for="comune">Comune dove si trova l'immobile</label>
+              <input type="text" id="comune" name="comune">
+            </div>
+
+            <div class="campo-testo">
+              <label for="interesse">Di cosa avete bisogno</label>
+              <select id="interesse" name="interesse">
+                <option>Pompa di calore</option>
+                <option>Climatizzazione</option>
+                <option>Geotermico</option>
+                <option>Fotovoltaico e accumulo</option>
+                <option>Manutenzione o assistenza</option>
+                <option>Non lo so ancora, mi serve un consiglio</option>
+              </select>
+            </div>
+
+            <div class="campo-testo">
+              <label for="oggi">Cosa avete adesso in casa</label>
+              <select id="oggi" name="oggi">
+                <option>Caldaia a gas</option>
+                <option>Caldaia a gasolio o GPL</option>
+                <option>Stufa o camino</option>
+                <option>Pompa di calore già installata</option>
+                <option>Casa nuova, ancora niente</option>
+              </select>
+            </div>
+
+            <div class="campo-testo">
+              <label for="messaggio">Due righe sulla situazione</label>
+              <textarea id="messaggio" name="messaggio" placeholder="Metri quadri, quante persone in casa, cosa vorreste cambiare, se avete già un preventivo..."></textarea>
+            </div>
+
+            <button class="bottone bottone-oro" type="submit" style="justify-content:center">Invia la richiesta <span class="freccia">&rarr;</span></button>
+            <p class="nota">Inviando la richiesta acconsentite al trattamento dei dati per essere ricontattati. Come li trattiamo è scritto nella <a href="privacy.html" style="color:var(--oro)">pagina privacy</a>.</p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

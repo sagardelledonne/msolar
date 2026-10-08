@@ -1,0 +1,338 @@
+<section class="eroe">
+  <canvas class="eroe-tela" aria-hidden="true"></canvas>
+  <div class="contenitore">
+    <p class="occhiello rivela">Impianti termici e fotovoltaici &middot; {{ZONA}}</p>
+    <h1 class="rivela">Prima si progetta.<br>Poi si installa.</h1>
+    <p class="guida grigio rivela">{{AZIENDA}} realizza impianti termici e fotovoltaici in tutto il {{ZONA}}. Pompe di calore, geotermico, climatizzazione e solare, dimensionati sulla casa che avete davvero &mdash; non sul catalogo.</p>
+    <div class="bottoni rivela">
+      <a class="bottone bottone-oro" href="contatti.html">Richiedi un sopralluogo <span class="freccia">&rarr;</span></a>
+      <a class="bottone bottone-chiaro" href="servizi.html">Che lavori facciamo</a>
+    </div>
+  </div>
+  <div class="contenitore eroe-piede">
+    <span>Pompe di calore e geotermico</span>
+    <span>Fotovoltaico e accumulo</span>
+    <span>Progettazione e pratiche incluse</span>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <div class="griglia griglia-2" style="gap:clamp(30px,5vw,70px);align-items:start">
+      <div class="rivela">
+        <p class="occhiello">Due competenze, un impianto solo</p>
+        <h2>Il calore è la nostra specialità.<br>La corrente, la seconda metà del lavoro.</h2>
+      </div>
+      <div class="rivela">
+        <p class="guida">Il termico è il mestiere di casa: pompe di calore, geotermico, climatizzazione, centrali termiche. È la parte dove si vede subito chi sa dimensionare e chi tira a indovinare.</p>
+        <p class="guida">Accanto c'è il fotovoltaico, progettato insieme all'impianto termico e non dopo: la pompa di calore consuma corrente proprio nelle ore in cui il tetto la produce. Due impianti pensati insieme rendono molto più di due impianti messi uno vicino all'altro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione-stretta">
+  <div class="contenitore">
+    <div class="griglia griglia-3">
+      <div class="scheda rivela">
+        <h3>Specializzati sul termico</h3>
+        <p class="grigio">Non siamo un'azienda che fa un po' di tutto e anche gli impianti. Il termico è il mestiere: ci studiamo sopra, lo progettiamo e lo mettiamo a punto fino all'ultimo grado.</p>
+      </div>
+      <div class="scheda rivela">
+        <h3>Precisi in cantiere</h3>
+        <p class="grigio">Staffaggi dritti, coibentazioni fatte, centrale ordinata, collaudo con i numeri alla mano. Un impianto curato si riconosce a colpo d'occhio e dura di più.</p>
+      </div>
+      <div class="scheda rivela">
+        <h3>Il cliente non resta solo</h3>
+        <p class="grigio">Vi spieghiamo cosa stiamo facendo e perché, prima di farlo. E quando l'impianto è acceso rispondiamo ancora al telefono: la manutenzione fa parte del lavoro, non è un servizio a parte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione chiara">
+  <div class="contenitore">
+    <div class="riga-titolo">
+      <p class="occhiello">Servizi</p>
+      <h2>Quello che facciamo</h2>
+      <p class="guida grigio" style="margin-top:18px">Dalla singola macchina all'impianto completo, dalla pratica di incentivo alla manutenzione negli anni.</p>
+    </div>
+    <div class="griglia griglia-3">{{SERVIZI_SCHEDE}}</div>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <div class="riga-titolo">
+      <p class="occhiello">Come funziona</p>
+      <h2>Una pompa di calore, spiegata bene</h2>
+      <p class="guida grigio" style="margin-top:18px">Non brucia niente: prende il calore che c'è già fuori, lo concentra e lo porta dentro casa. Con un kWh di corrente ne consegna tre o quattro di calore.</p>
+    </div>
+
+    <div class="schema rivela">
+      <svg viewBox="0 0 980 370" role="img" aria-label="Schema di un impianto a pompa di calore: unità esterna, centrale termica, distribuzione in casa e fotovoltaico sul tetto">
+        <defs>
+          <linearGradient id="caldo" x1="0" x2="1">
+            <stop offset="0" stop-color="#f2b125" stop-opacity="0.35"/>
+            <stop offset="1" stop-color="#ffd36b"/>
+          </linearGradient>
+        </defs>
+
+        <!-- sole -->
+        <g class="pulsa">
+          <circle cx="836" cy="54" r="22" fill="#f2b125" opacity="0.9"/>
+          <g stroke="#f2b125" stroke-width="2.4" stroke-linecap="round" opacity="0.75">
+            <path d="M836 16v-12M836 104v12M878 54h12M782 54h-12M866 24l9-9M797 93l-9 9M866 84l9 9M797 15l-9-9"/>
+          </g>
+        </g>
+
+        <!-- pannelli fotovoltaici -->
+        <g>
+          <path d="M604 126 L700 58 L812 58 L730 126 Z" fill="#02356e" opacity="0.55" stroke="#9fb0c2" stroke-width="1.6"/>
+          <path d="M636 126 L724 58M668 126 L752 58M700 126 L784 58M620 102 L760 102M652 80 L790 80"
+                stroke="#9fb0c2" stroke-width="1" opacity="0.5"/>
+          <text x="604" y="150" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">Fotovoltaico</text>
+        </g>
+
+        <!-- corrente dal fotovoltaico alla macchina -->
+        <path class="flusso-freddo" d="M604 112 C 430 112, 330 120, 196 150"
+              fill="none" stroke="#ffd36b" stroke-width="2" opacity="0.65"/>
+
+        <!-- unità esterna -->
+        <g>
+          <rect x="60" y="150" width="160" height="134" rx="12" fill="#0c1e33" stroke="#9fb0c2" stroke-width="1.6"/>
+          <circle cx="140" cy="217" r="42" fill="none" stroke="#9fb0c2" stroke-width="1.4" opacity="0.7"/>
+          <g class="ruota" style="transform-origin:140px 217px">
+            <path d="M140 183 C 158 196, 158 214, 140 217 C 122 220, 122 238, 140 251"
+                  fill="none" stroke="#f2b125" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M106 217 C 119 199, 137 199, 140 217 C 143 235, 161 235, 174 217"
+                  fill="none" stroke="#f2b125" stroke-width="2.6" stroke-linecap="round"/>
+          </g>
+          <text x="60" y="310" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">Unità esterna</text>
+          <text x="60" y="330" fill="#5b6878" font-family="Manrope, sans-serif" font-size="12.5">prende il calore dall'aria</text>
+        </g>
+
+        <!-- tubi fra unità esterna e centrale -->
+        <path class="flusso-caldo" d="M220 196 H 430" fill="none" stroke="url(#caldo)" stroke-width="4" stroke-linecap="round"/>
+        <path class="flusso-freddo" d="M430 248 H 220" fill="none" stroke="#6fa8c7" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+
+        <!-- centrale termica -->
+        <g>
+          <rect x="430" y="150" width="130" height="134" rx="12" fill="#0c1e33" stroke="#9fb0c2" stroke-width="1.6"/>
+          <rect x="452" y="172" width="38" height="92" rx="19" fill="none" stroke="#f2b125" stroke-width="1.8" opacity="0.85"/>
+          <rect x="504" y="172" width="38" height="92" rx="19" fill="none" stroke="#6fa8c7" stroke-width="1.8" opacity="0.7"/>
+          <text x="430" y="310" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">Centrale termica</text>
+          <text x="430" y="330" fill="#5b6878" font-family="Manrope, sans-serif" font-size="12.5">accumulo e distribuzione</text>
+        </g>
+
+        <!-- tubi verso casa -->
+        <path class="flusso-caldo" d="M560 196 H 690" fill="none" stroke="url(#caldo)" stroke-width="4" stroke-linecap="round"/>
+        <path class="flusso-freddo" d="M690 248 H 560" fill="none" stroke="#6fa8c7" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+
+        <!-- casa -->
+        <g>
+          <path d="M690 284 V 196 L 790 150 L 890 196 V 284 Z" fill="#0c1e33" stroke="#9fb0c2" stroke-width="1.6"/>
+          <path class="flusso-caldo" d="M712 268 H 868 M868 252 H 712 M712 236 H 868"
+                fill="none" stroke="#f2b125" stroke-width="2.4" stroke-linecap="round" opacity="0.9"/>
+          <rect x="800" y="196" width="48" height="30" rx="4" fill="none" stroke="#f2b125" stroke-width="1.6" opacity="0.8"/>
+          <path d="M808 196v30M818 196v30M828 196v30M838 196v30" stroke="#f2b125" stroke-width="1.2" opacity="0.6"/>
+          <path d="M716 214 q 10 -14 20 0 t 20 0" fill="none" stroke="#6fa8c7" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+          <text x="690" y="310" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">In casa</text>
+          <text x="690" y="330" fill="#5b6878" font-family="Manrope, sans-serif" font-size="12.5">pavimento, radiatori, acqua calda</text>
+        </g>
+      </svg>
+
+      <div class="legenda">
+        <span><i style="background:#f2b125"></i> Calore verso casa</span>
+        <span><i style="background:#6fa8c7"></i> Ritorno più freddo</span>
+        <span><i style="background:#ffd36b"></i> Corrente dal fotovoltaico</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione chiara">
+  <div class="contenitore">
+    <div class="riga-titolo">
+      <p class="occhiello">Fate il conto da soli</p>
+      <h2>Quanto si spende con il gas,<br>quanto con la pompa di calore</h2>
+      <p class="guida grigio" style="margin-top:18px">Muovete i cursori con i vostri numeri: il calore che consumate in un anno e i prezzi che pagate oggi. È un ordine di grandezza, non un preventivo &mdash; ma è un ordine di grandezza fatto con la formula giusta.</p>
+    </div>
+
+    <div class="calcolatore rivela" data-calcolatore>
+      <div class="campi">
+        <div class="campo">
+          <label for="fabbisogno">Calore che consumate in un anno <b id="v-fabbisogno">12.000 kWh</b></label>
+          <input type="range" id="fabbisogno" min="4000" max="30000" step="500" value="12000">
+        </div>
+        <div class="campo">
+          <label for="prezzo-gas">Prezzo del gas <b id="v-gas">1,10 €/Smc</b></label>
+          <input type="range" id="prezzo-gas" min="60" max="180" step="5" value="110">
+        </div>
+        <div class="campo">
+          <label for="prezzo-luce">Prezzo della luce <b id="v-luce">0,28 €/kWh</b></label>
+          <input type="range" id="prezzo-luce" min="15" max="45" step="1" value="28">
+        </div>
+        <div class="campo">
+          <label for="scop">Rendimento della pompa di calore (SCOP) <b id="v-scop">4,00</b></label>
+          <input type="range" id="scop" min="25" max="55" step="1" value="40">
+        </div>
+      </div>
+
+      <div>
+        <div class="esito">
+          <div class="esito-riga">
+            <span>Con la caldaia a gas</span>
+            <b id="costo-gas">—</b>
+          </div>
+          <div class="esito-riga">
+            <span>Con la pompa di calore</span>
+            <b id="costo-pdc">—</b>
+          </div>
+          <div class="esito-riga esito-risparmio">
+            <span id="etichetta-differenza">Risparmio con la pompa di calore</span>
+            <b id="differenza">—</b>
+          </div>
+        </div>
+        <p class="nota">Il conto usa un rendimento della caldaia del 92% e un potere calorifico del gas di 9,45 kWh per metro cubo. Non tiene conto di quota fissa, imposte e costi di manutenzione, che cambiano da contratto a contratto. In sopralluogo il calcolo si fa sulle vostre bollette.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <div class="riga-titolo">
+      <p class="occhiello">Come lavoriamo</p>
+      <h2>Sei passaggi, sempre gli stessi</h2>
+    </div>
+    <div class="passi rivela">
+      <div class="passo">
+        <div>
+          <h3>Sopralluogo</h3>
+          <p class="grigio">Veniamo a vedere la casa, l'impianto che c'è, lo spazio per le macchine e il quadro elettrico. Portate le ultime bollette: servono.</p>
+        </div>
+      </div>
+      <div class="passo">
+        <div>
+          <h3>Calcolo del fabbisogno</h3>
+          <p class="grigio">Quanta energia serve davvero a questa casa, stanza per stanza. È il passaggio che quasi nessuno fa e che decide tutto il resto.</p>
+        </div>
+      </div>
+      <div class="passo">
+        <div>
+          <h3>Preventivo voce per voce</h3>
+          <p class="grigio">Ogni componente scritto con marca, modello e cosa fa. Niente "fornitura e posa impianto" a corpo: così si capisce cosa state comprando.</p>
+        </div>
+      </div>
+      <div class="passo">
+        <div>
+          <h3>Pratiche e incentivi</h3>
+          <p class="grigio">Verifichiamo prima a cosa avete diritto, poi prepariamo la documentazione. La pratica ENEA è compresa nei nostri interventi di riqualificazione.</p>
+        </div>
+      </div>
+      <div class="passo">
+        <div>
+          <h3>Installazione</h3>
+          <p class="grigio">Cantiere ordinato, tempi detti prima e rispettati, e qualcuno che risponde al telefono mentre i lavori sono in corso.</p>
+        </div>
+      </div>
+      <div class="passo">
+        <div>
+          <h3>Collaudo, taratura e assistenza</h3>
+          <p class="grigio">L'impianto si accende e poi si regola: curve climatiche, temperature, acqua calda. Poi restiamo noi a seguirlo negli anni.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <div class="griglia griglia-2" style="gap:clamp(30px,5vw,70px);align-items:start">
+      <div class="rivela">
+        <p class="occhiello">Normativa e incentivi</p>
+        <h2>Le carte le facciamo noi,<br>e le facciamo prima</h2>
+        <p class="guida grigio" style="margin-top:18px">Detrazione fiscale o Conto Termico, pratica ENEA, connessione del fotovoltaico, dichiarazione di conformità, libretto di impianto. Verifichiamo a cosa avete diritto <strong>prima di firmare</strong>: è lì che si perdono i soldi, non in cantiere.</p>
+        <div class="bottoni">
+          <a class="bottone bottone-chiaro" href="incentivi.html">Normativa e incentivi <span class="freccia">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="rivela">
+        <div class="numeri" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+          <div class="numero"><b>Termico</b><span>Detrazione fiscale oppure Conto Termico, che è un contributo in denaro e non uno sconto sulle tasse</span></div>
+          <div class="numero"><b>Fotovoltaico</b><span>Detrazione legata al recupero edilizio, accumulo compreso, più l'autoconsumo che vale ogni anno</span></div>
+          <div class="numero"><b>ENEA</b><span>La comunicazione obbligatoria di fine lavori, inclusa nei nostri interventi</span></div>
+          <div class="numero"><b>Aziende</b><span>Leasing e noleggio operativo con Grenke, finanziamento ai privati con Cofidis</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <div class="richiamo rivela" style="background:linear-gradient(135deg,#0c1e33,#07121f 65%)">
+      <div class="griglia griglia-2" style="gap:clamp(28px,4vw,60px);align-items:center">
+        <div>
+          <p class="occhiello">Manutenzione</p>
+          <h2>L'impianto non finisce<br>il giorno dell'accensione</h2>
+          <p class="guida grigio" style="margin-top:20px">Una macchina seguita consuma meno e dura di più. Facciamo manutenzione programmata su pompe di calore, climatizzatori e caldaie, lavaggio delle batterie prima dell'estate e interventi su guasto. Anche su impianti installati da altri.</p>
+          <div class="bottoni">
+            <a class="bottone bottone-oro" href="assistenza.html">La manutenzione <span class="freccia">&rarr;</span></a>
+          </div>
+        </div>
+        <div>
+          <ul class="spuntato">
+            <li>Controllo annuale con i parametri scritti, non a occhio</li>
+            <li>Lavaggio e sanificazione dei climatizzatori</li>
+            <li>Verifica delle pressioni e delle portate</li>
+            <li>Ritaratura delle curve dopo il primo inverno</li>
+            <li>Contratti di manutenzione su misura dell'impianto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione chiara">
+  <div class="contenitore">
+    <div class="griglia griglia-2" style="gap:clamp(30px,5vw,70px);align-items:start">
+      <div class="rivela">
+        <p class="occhiello">Con chi lavoriamo</p>
+        <h2>Prodotti scelti,<br>non quelli in offerta</h2>
+        <p class="guida grigio" style="margin-top:18px">Lavoriamo con marchi che conosciamo a fondo e di cui sappiamo come si comportano dopo cinque anni, non solo in scheda tecnica.</p>
+      </div>
+      <div class="rivela">
+        <div class="partner">{{PARTNER_PRODOTTI}}</div>
+      </div>
+    </div>
+
+    <div class="griglia griglia-2" style="gap:clamp(30px,5vw,70px);align-items:start;margin-top:clamp(40px,6vw,80px)">
+      <div class="rivela">
+        <p class="occhiello">Pagamenti</p>
+        <h2>Si può fare a rate,<br>anche in azienda</h2>
+        <p class="guida grigio" style="margin-top:18px">Un impianto fatto bene è un investimento: non deve diventare un problema di cassa. Per i privati c'è il finanziamento rateale, per le aziende il leasing e il noleggio operativo, che si scaricano come costo.</p>
+      </div>
+      <div class="rivela">
+        <div class="partner">{{PARTNER_FINANZA}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <div class="griglia griglia-2" style="gap:clamp(30px,5vw,70px);align-items:start">
+      <div class="rivela">
+        <p class="occhiello">Dove lavoriamo</p>
+        <h2>{{ZONA}}</h2>
+      </div>
+      <div class="rivela">
+        <p class="guida">Partiamo da {{CITTA}} ({{PROV}}) e lavoriamo in tutto il {{ZONA}}. Per gli impianti importanti ci spostiamo volentieri: quello che non facciamo mai è vendere un impianto senza averlo visto.</p>
+        <p class="grigio" style="margin-top:18px">{{CITTA_SERVITE}}</p>
+      </div>
+    </div>
+  </div>
+</section>

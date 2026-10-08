@@ -1,0 +1,138 @@
+{
+  "_nota": "Una voce = una pagina del sito. Per cambiare un testo basta scrivere qui dentro e rilanciare: python build.py",
+
+  "servizi": [
+    {
+      "file": "pompe-di-calore",
+      "titolo": "Pompe di calore",
+      "occhiello": "Riscaldamento, raffrescamento e acqua calda",
+      "sottotitolo": "Un impianto solo, elettrico, che scalda d'inverno, raffresca d'estate e fa l'acqua calda tutto l'anno.",
+      "intro": "La pompa di calore non brucia niente: sposta il calore che c'è già nell'aria. È la tecnologia su cui M-Solar Group lavora ogni giorno, ed è anche quella che perdona meno gli errori: una macchina sovradimensionata consuma di più, una sottodimensionata lascia la casa fredda nei giorni che contano. Per questo da noi il dimensionamento arriva prima del preventivo.",
+      "comprende": [
+        { "titolo": "Sopralluogo e calcolo", "testo": "Rilievo dell'edificio, dei corpi scaldanti e dei consumi reali. Il fabbisogno si calcola, non si stima a occhio." },
+        { "titolo": "Unità esterna e centrale termica", "testo": "Fornitura e posa della pompa di calore e di tutta la centrale: gruppo di distribuzione, defangatore magnetico, vaso di espansione, caricamento automatico." },
+        { "titolo": "Accumulo per l'acqua calda", "testo": "Bollitore dimensionato sulle persone che vivono in casa e sulle abitudini reali, non sul numero di bagni." },
+        { "titolo": "Integrazione con i radiatori esistenti", "testo": "Non sempre serve rifare l'impianto: valutiamo se i corpi scaldanti che avete già possono lavorare a bassa temperatura." },
+        { "titolo": "Regolazione e app", "testo": "Modulo Wi-Fi e controllo da remoto dal telefono, con lettura dei consumi." },
+        { "titolo": "Collaudo e taratura", "testo": "L'impianto si accende e poi si regola: curve climatiche, temperature di mandata, acqua calda. È qui che si decide quanto consumerà davvero." }
+      ],
+      "dettagli": [
+        { "valore": "4,60", "etichetta": "COP in riscaldamento (A7/W35) della LG Therma V Monoblocco S2" },
+        { "valore": "−15 °C", "etichetta": "Potenza termica ancora al 100% con questa temperatura esterna" },
+        { "valore": "65 °C", "etichetta": "Acqua in mandata senza resistenza elettrica, fino a −5 °C esterni" },
+        { "valore": "A+++", "etichetta": "Classe energetica della macchina che installiamo più spesso" }
+      ],
+      "faq": [
+        { "d": "Devo per forza rifare i termosifoni?", "r": "Non sempre. Molti radiatori esistenti lavorano bene a 45–50 °C se la casa è stata isolata o se si sostituiscono solo quelli sottodimensionati. Si verifica stanza per stanza prima di decidere: è esattamente quello che facciamo nel sopralluogo." },
+        { "d": "Quanto consuma rispetto al gas?", "r": "Dipende dal rendimento stagionale della macchina e dal prezzo che pagate per luce e gas. Nella pagina iniziale del sito trovate un calcolo che potete fare con i vostri numeri: serve a dare un ordine di grandezza, poi in sopralluogo si fa il conto preciso." },
+        { "d": "Funziona davvero quando fa freddo?", "r": "Sì. Le macchine che installiamo mantengono la potenza piena fino a −15 °C e lavorano fino a −25 °C. Il punto non è il freddo: è il dimensionamento." }
+      ],
+      "correlati": ["geotermico", "fotovoltaico"]
+    },
+
+    {
+      "file": "climatizzazione",
+      "titolo": "Climatizzazione",
+      "occhiello": "Split, multisplit, canalizzati",
+      "sottotitolo": "Raffrescare bene vuol dire non sentire il climatizzatore: né con le orecchie, né addosso.",
+      "intro": "Un climatizzatore montato male si sente subito: rumore, aria che tira sul collo, bollette alte. La differenza la fanno la posizione delle unità, il percorso delle linee frigorifere e la messa in servizio fatta a regola d'arte. Lavoriamo su macchine a parete, multisplit e canalizzati, dove le unità spariscono nel controsoffitto e si vede solo la griglia.",
+      "comprende": [
+        { "titolo": "Split e multisplit", "testo": "Una o più unità interne collegate a un'unica esterna, per non riempire il balcone di motori." },
+        { "titolo": "Canalizzati", "testo": "Macchina nascosta nel controsoffitto e mandata distribuita nelle stanze: in vista resta solo la griglia." },
+        { "titolo": "Linee frigorifere", "testo": "Percorsi studiati prima, staffaggi corretti, vuoto fatto come si deve. È la parte che non si vede e che decide la durata della macchina." },
+        { "titolo": "Pompa di calore in aria-aria", "testo": "Gli stessi climatizzatori scaldano in inverno: per molte case è il modo più semplice per ridurre il gas." },
+        { "titolo": "Manutenzione e sanificazione", "testo": "Lavaggio delle batterie e dei filtri, controllo delle pressioni, verifica degli scarichi condensa." }
+      ],
+      "dettagli": [
+        { "valore": "R32", "etichetta": "Il gas refrigerante delle macchine attuali, con impatto ambientale più basso dell'R410A" },
+        { "valore": "F-Gas", "etichetta": "Gli interventi sul circuito frigorifero sono per legge riservati a chi ha il patentino" },
+        { "valore": "Inverter", "etichetta": "La macchina modula invece di accendersi e spegnersi: meno sbalzi, meno consumi" }
+      ],
+      "faq": [
+        { "d": "Meglio un multisplit o tante macchine separate?", "r": "Dipende da quante stanze dovete climatizzare e da come le usate. Il multisplit libera il balcone e costa meno in opere murarie, ma se le unità lavorano in momenti molto diversi fra loro a volte conviene tenerle separate." },
+        { "d": "Il canalizzato si può mettere in una casa già finita?", "r": "Serve uno spazio nel controsoffitto o in un ribassamento, di solito nel corridoio o nel bagno. Si valuta in sopralluogo: dove non c'è spazio, esistono macchine a parete silenziose che fanno un ottimo lavoro." },
+        { "d": "Ogni quanto va fatta la manutenzione?", "r": "Una volta all'anno prima dell'estate, più spesso se ci sono animali o allergie in casa. Un filtro sporco fa consumare di più e peggiora l'aria che respirate." }
+      ],
+      "correlati": ["pompe-di-calore", "assistenza"]
+    },
+
+    {
+      "file": "geotermico",
+      "titolo": "Geotermico",
+      "occhiello": "La sorgente che non cambia mai",
+      "sottotitolo": "Sotto i vostri piedi la temperatura è la stessa a gennaio e ad agosto. È da lì che prendiamo il calore.",
+      "intro": "L'aria esterna d'inverno scende sotto zero, il terreno no: a pochi metri di profondità resta stabile tutto l'anno. Una pompa di calore geotermica parte da questa sorgente costante, e per questo rende di più e in modo più regolare proprio nei giorni più freddi, quando serve davvero. È l'impianto più impegnativo da progettare e il più soddisfacente da vivere.",
+      "comprende": [
+        { "titolo": "Studio di fattibilità", "testo": "Verifica del terreno, dello spazio disponibile e dei vincoli, prima di promettere qualunque cosa." },
+        { "titolo": "Sonde verticali", "testo": "Perforazioni profonde dove lo spazio in superficie è poco. Occupano pochi metri quadri di giardino." },
+        { "titolo": "Sonde orizzontali", "testo": "Serpentine posate a bassa profondità dove c'è terreno a disposizione: costa meno, serve più superficie." },
+        { "titolo": "Centrale e distribuzione", "testo": "Pompa di calore geotermica, circuiti, accumuli e regolazione, integrati con il riscaldamento esistente o nuovo." },
+        { "titolo": "Pratiche e autorizzazioni", "testo": "Le perforazioni hanno un loro iter autorizzativo: lo seguiamo noi." }
+      ],
+      "dettagli": [
+        { "valore": "Costante", "etichetta": "La temperatura del terreno a pochi metri non segue le stagioni" },
+        { "valore": "2 strade", "etichetta": "Sonde verticali dove c'è poco spazio, orizzontali dove c'è giardino" },
+        { "valore": "Estate", "etichetta": "Lo stesso impianto raffresca, scaricando il calore nel terreno" }
+      ],
+      "faq": [
+        { "d": "Mi rovinate il giardino?", "r": "Con le sonde verticali no: il cantiere occupa pochi metri quadri per il tempo della perforazione, poi tutto torna com'era. Con le sonde orizzontali il terreno va scavato e rinterrato, quindi si fa dove il giardino è ancora da sistemare." },
+        { "d": "Conviene davvero rispetto a una pompa di calore ad aria?", "r": "Costa di più all'inizio e rende di più ogni anno, in modo più stabile. Ha senso dove si consuma molto, dove il freddo è forte o dove si cerca il massimo rendimento. Lo diciamo con i numeri, non per principio: se non conviene, ve lo diciamo." },
+        { "d": "Serve un'autorizzazione?", "r": "Sì, e cambia da Comune a Comune e da regione a regione. Fa parte del nostro lavoro verificarla prima di partire." }
+      ],
+      "correlati": ["pompe-di-calore", "assistenza"]
+    },
+
+    {
+      "file": "fotovoltaico",
+      "titolo": "Fotovoltaico e accumulo",
+      "occhiello": "L'energia che alimenta tutto il resto",
+      "sottotitolo": "Un impianto termico elettrico merita la sua corrente. Il fotovoltaico è la seconda metà del lavoro.",
+      "intro": "Pompa di calore e fotovoltaico si tengono per mano: la macchina consuma corrente proprio nelle ore in cui il tetto la produce. Progettiamo i due impianti insieme, così l'autoconsumo è alto davvero e non solo sulla carta. Lavoriamo con inverter e accumuli Huawei, e dimensioniamo sulla base dei consumi reali letti in bolletta.",
+      "comprende": [
+        { "titolo": "Lettura delle bollette", "testo": "Partiamo dai kWh che consumate e da quando li consumate. Senza quelli, qualunque dimensionamento è un'ipotesi." },
+        { "titolo": "Impianto chiavi in mano", "testo": "Moduli, strutture, inverter, quadri e cablaggi. Comprese le pratiche di connessione." },
+        { "titolo": "Accumulo", "testo": "Batterie dimensionate su quanto consumate la sera: un accumulo troppo grande non si ripaga." },
+        { "titolo": "Colonnine di ricarica", "testo": "Ricarica dell'auto integrata con l'impianto, per caricare quando il sole produce." },
+        { "titolo": "Monitoraggio", "testo": "Produzione, consumi e autoconsumo visibili dall'app, così si capisce davvero cosa succede in casa." }
+      ],
+      "dettagli": [
+        { "valore": "Huawei", "etichetta": "Inverter e sistemi di accumulo con cui lavoriamo abitualmente" },
+        { "valore": "Insieme", "etichetta": "Termico e fotovoltaico progettati nello stesso momento, non uno dopo l'altro" },
+        { "valore": "Dai kWh", "etichetta": "Il dimensionamento parte dalle bollette, non dalla superficie del tetto" }
+      ],
+      "faq": [
+        { "d": "Quanto deve essere grande l'impianto?", "r": "Quanto serve a coprire i consumi che avete davvero, compresi quelli nuovi della pompa di calore o dell'auto elettrica. Più grande non vuol dire migliore: l'energia che immettete in rete vale molto meno di quella che usate in casa." },
+        { "d": "Conviene l'accumulo?", "r": "Conviene quando consumate molto la sera e poco di giorno. Si decide guardando le fasce dei vostri consumi, non per abitudine." },
+        { "d": "Fate anche le pratiche?", "r": "Sì: connessione al distributore, pratiche GSE e la parte fiscale legata all'intervento." }
+      ],
+      "correlati": ["pompe-di-calore", "assistenza"]
+    },
+
+    {
+      "file": "assistenza",
+      "titolo": "Manutenzione e assistenza",
+      "occhiello": "Dopo l'installazione, e anche prima",
+      "sottotitolo": "Un impianto nuovo è il momento più facile. Il lavoro vero è tenerlo in forma negli anni.",
+      "intro": "Molti impianti consumano più del dovuto non perché siano sbagliati, ma perché nessuno li ha più guardati dopo l'accensione. Facciamo manutenzione programmata, interventi su chiamata e tutta la parte di carta: progettazione, pratiche di incentivo, ENEA, GSE. Anche su impianti che non abbiamo installato noi.",
+      "comprende": [
+        { "titolo": "Manutenzione programmata", "testo": "Controlli annuali su pompe di calore, climatizzatori e caldaie: pressioni, portate, filtri, parametri di regolazione." },
+        { "titolo": "Lavaggio climatizzatori", "testo": "Batterie e filtri puliti prima dell'estate: aria migliore e consumi più bassi." },
+        { "titolo": "Interventi su guasto", "testo": "Diagnosi e riparazione, anche su impianti installati da altri." },
+        { "titolo": "Progettazione e calcoli", "testo": "Dimensionamenti, calcoli dei carichi termici, relazioni tecniche, APE e diagnosi energetiche." },
+        { "titolo": "Pratiche e incentivi", "testo": "Pratica ENEA, Conto Termico, detrazioni fiscali, pratiche GSE e di connessione: le seguiamo noi, dall'inizio alla fine." },
+        { "titolo": "Trattamento dell'acqua", "testo": "Addolcitori e filtrazione: l'acqua giusta allunga la vita a tutto l'impianto." }
+      ],
+      "dettagli": [
+        { "valore": "1 volta", "etichetta": "All'anno: è la frequenza minima per non perdere rendimento" },
+        { "valore": "Inclusa", "etichetta": "La pratica ENEA è compresa nei nostri interventi di riqualificazione" },
+        { "valore": "Anche altrui", "etichetta": "Interveniamo anche su impianti installati da altre aziende" }
+      ],
+      "faq": [
+        { "d": "Avete un contratto di manutenzione?", "r": "Sì, e si costruisce sull'impianto che avete: numero di macchine, tipo di utilizzo, quante volte all'anno si interviene." },
+        { "d": "Seguite voi la pratica per le detrazioni?", "r": "Sì. Le percentuali e i requisiti cambiano spesso, quindi li verifichiamo caso per caso prima di firmare e non dopo: è la parte dove si fanno più danni." },
+        { "d": "Intervenite su impianti che non avete fatto voi?", "r": "Sì. Facciamo prima una diagnosi onesta: a volte basta una regolazione, a volte conviene sostituire. Lo diciamo chiaramente, senza vendere per forza una macchina nuova." }
+      ],
+      "correlati": ["pompe-di-calore", "climatizzazione"]
+    }
+  ]
+}
