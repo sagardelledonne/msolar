@@ -141,6 +141,7 @@
 
   /* ---------- cursori con la barra colorata ---------- */
   function riempiBarra(el) {
+    if (!el) return;
     var min = parseFloat(el.min || 0), max = parseFloat(el.max || 100);
     var q = ((parseFloat(el.value) - min) / (max - min)) * 100;
     el.style.setProperty("--riempi", q + "%");
@@ -150,14 +151,14 @@
   var calc = document.querySelector("[data-calcolatore]");
   if (calc) {
     var campi = {
-      fabbisogno: calc.querySelector("#fabbisogno"),
+      smc: calc.querySelector("#gas-smc"),
       luceCasa: calc.querySelector("#luce-casa"),
       gas: calc.querySelector("#prezzo-gas"),
       luce: calc.querySelector("#prezzo-luce"),
       kwp: calc.querySelector("#kwp")
     };
     var mostra = {
-      fabbisogno: calc.querySelector("#v-fabbisogno"),
+      smc: calc.querySelector("#v-smc"),
       luceCasa: calc.querySelector("#v-luce-casa"),
       gas: calc.querySelector("#v-gas"),
       luce: calc.querySelector("#v-luce"),
@@ -182,14 +183,14 @@
     var unDecimale = new Intl.NumberFormat("it-IT", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
     function conta() {
-      var fabbisogno = parseFloat(campi.fabbisogno.value);   // kWh di calore all'anno
+      var smc = parseFloat(campi.smc.value);                 // metri cubi di gas all'anno
+      var fabbisogno = smc * PCI_GAS * RESA_CALDAIA;         // kWh di calore che la caldaia consegna
       var luceCasa = parseFloat(campi.luceCasa.value);       // kWh elettrici di casa all'anno
       var prezzoGas = parseFloat(campi.gas.value) / 100;     // euro al metro cubo
       var prezzoLuce = parseFloat(campi.luce.value) / 100;   // euro al kWh
       var kwp = parseFloat(campi.kwp.value) / 10;
 
       // oggi: caldaia a gas per il calore, luce comprata tutta dalla rete
-      var smc = fabbisogno / (PCI_GAS * RESA_CALDAIA);
       var costoOggi = smc * prezzoGas + luceCasa * prezzoLuce;
 
       // domani: pompa di calore piu' fotovoltaico
@@ -202,7 +203,7 @@
 
       var differenza = costoOggi - costoDomani;
 
-      mostra.fabbisogno.textContent = numero.format(fabbisogno) + " kWh";
+      mostra.smc.textContent = numero.format(smc) + " Smc";
       mostra.luceCasa.textContent = numero.format(luceCasa) + " kWh";
       mostra.gas.textContent = decimali.format(prezzoGas) + " €/Smc";
       mostra.luce.textContent = decimali.format(prezzoLuce) + " €/kWh";
@@ -222,6 +223,8 @@
           + "La pompa di calore consuma " + numero.format(Math.round(kwhPompa)) + " kWh elettrici al posto del gas."
         : "Senza fotovoltaico la pompa di calore consuma " + numero.format(Math.round(kwhPompa))
           + " kWh elettrici all'anno. Muovete l'ultimo cursore per vedere cosa cambia aggiungendo il solare.";
+      mostra.dettaglio.innerHTML = numero.format(smc) + " Smc di gas sono circa "
+        + numero.format(Math.round(fabbisogno)) + " kWh di calore. " + mostra.dettaglio.innerHTML;
     }
 
     Object.keys(campi).forEach(function (k) {

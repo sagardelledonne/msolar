@@ -9,6 +9,7 @@ Cosa si tocca per cambiare i contenuti:
   src/stile.css      -> grafica
   src/script.js      -> animazioni e calcolatore
 """
+import hashlib
 import io
 import json
 import os
@@ -30,6 +31,13 @@ def scrivi(percorso, testo):
         os.makedirs(cartella)
     with io.open(percorso, "w", encoding="utf-8", newline="\n") as f:
         f.write(testo)
+
+
+def impronta(percorso):
+    """Otto caratteri che cambiano quando cambia il file: servono a far
+    scaricare al browser la versione nuova invece di quella in memoria."""
+    with io.open(percorso, "rb") as f:
+        return hashlib.md5(f.read()).hexdigest()[:8]
 
 
 DATI = json.loads(leggi(SRC + "/dati.json"))
@@ -118,7 +126,7 @@ GUSCIO = """<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="stile.css?v={ver_css}">
 <script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -203,7 +211,7 @@ GUSCIO = """<!doctype html>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js?v={ver_js}"></script>
 </body>
 </html>
 """
@@ -266,6 +274,8 @@ def pagina(file, titolo_seo, descrizione, corpo, con_richiamo=True):
         rea=DATI["rea"],
         orari=DATI["orari"],
         titolare=DATI["titolare"],
+        ver_css=impronta(SRC + "/stile.css"),
+        ver_js=impronta(SRC + "/script.js"),
         menu=menu(file),
         corpo=corpo,
     )
