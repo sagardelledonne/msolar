@@ -13,7 +13,7 @@
   --grigio-scuro: #5b6878;
   --linea: rgba(245, 242, 236, 0.13);
   --linea-scura: rgba(7, 18, 31, 0.12);
-  --largo: 1180px;
+  --largo: 1280px;
   --raggio: 18px;
   --ombra: 0 30px 70px -30px rgba(0, 0, 0, 0.6);
 }
@@ -531,6 +531,28 @@ select option { color: #111; }
   background: var(--oro); color: #16223a; padding: 12px 20px; border-radius: 10px; text-decoration: none;
 }
 .salta-al-contenuto:focus { left: 24px; }
+
+/* ---------- schermi grandi: il sito respira invece di stare in una colonnina ---------- */
+
+@media (min-width: 1500px) {
+  :root { --largo: 1420px; }
+  body { font-size: 18px; }
+  h1 { font-size: clamp(3.2rem, 4.4vw, 5.5rem); }
+  h2 { font-size: clamp(2.4rem, 2.9vw, 3.7rem); }
+  h3 { font-size: 1.42rem; }
+  .guida { font-size: 1.3rem; max-width: 66ch; }
+  .sezione { padding: 140px 0; }
+  .eroe { padding: 190px 0 110px; }
+  .scheda { padding: 36px; }
+  .numero { padding: 42px 32px; }
+  .passo { grid-template-columns: 110px 1fr; padding: 34px 0; }
+  .griglia { gap: 28px; }
+}
+
+@media (min-width: 1800px) {
+  :root { --largo: 1560px; }
+  .eroe .guida { max-width: 70ch; }
+}
 
 /* ---------- schermi piccoli ---------- */
 

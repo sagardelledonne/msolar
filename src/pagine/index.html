@@ -2,8 +2,8 @@
   <canvas class="eroe-tela" aria-hidden="true"></canvas>
   <div class="contenitore">
     <p class="occhiello rivela">Impianti termici e fotovoltaici &middot; {{ZONA}}</p>
-    <h1 class="rivela">Prima si progetta.<br>Poi si installa.</h1>
-    <p class="guida grigio rivela">{{AZIENDA}} realizza impianti termici e fotovoltaici in tutto il {{ZONA}}. Pompe di calore, geotermico, climatizzazione e solare, dimensionati sulla casa che avete davvero &mdash; non sul catalogo.</p>
+    <h1 class="rivela">Progettiamo il modo<br>in cui userete l'energia.</h1>
+    <p class="guida grigio rivela">Pompe di calore, geotermico, climatizzazione, fotovoltaico e accumulo. {{AZIENDA}} studia come la vostra casa o la vostra azienda consuma, e costruisce l'impianto intorno a quei numeri &mdash; non intorno a un catalogo. In tutto il {{ZONA}}.</p>
     <div class="bottoni rivela">
       <a class="bottone bottone-oro" href="contatti.html">Richiedi un sopralluogo <span class="freccia">&rarr;</span></a>
       <a class="bottone bottone-chiaro" href="servizi.html">Che lavori facciamo</a>
@@ -254,11 +254,14 @@
   <div class="contenitore">
     <div class="riga-titolo">
       <p class="occhiello">Fate il conto da soli</p>
-      <h2>Quanto si spende con il gas,<br>quanto con la pompa di calore</h2>
-      <p class="guida grigio" style="margin-top:18px">Muovete i cursori con i vostri numeri: il calore che consumate in un anno e i prezzi che pagate oggi. È un ordine di grandezza, non un preventivo &mdash; ma è un ordine di grandezza fatto con la formula giusta.</p>
+      <h2>Gas, pompa di calore,<br>fotovoltaico: i conti in chiaro</h2>
+      <p class="guida grigio" style="margin-top:18px">Muovete i cursori con i vostri numeri: il calore che consumate in un anno, i prezzi che pagate oggi e l'impianto fotovoltaico che state valutando. È un ordine di grandezza, non un preventivo &mdash; ma è un ordine di grandezza fatto con le formule giuste.</p>
     </div>
 
-    <div class="calcolatore rivela" data-calcolatore>
+    <div data-calcolatore>
+
+    <p class="occhiello" style="margin-bottom:22px">1 &middot; Il riscaldamento</p>
+    <div class="calcolatore rivela">
       <div class="campi">
         <div class="campo">
           <label for="fabbisogno">Calore che consumate in un anno <b id="v-fabbisogno">12.000 kWh</b></label>
@@ -293,8 +296,57 @@
             <b id="differenza">—</b>
           </div>
         </div>
-        <p class="nota">Il conto usa un rendimento della caldaia del 92% e un potere calorifico del gas di 9,45 kWh per metro cubo. Non tiene conto di quota fissa, imposte e costi di manutenzione, che cambiano da contratto a contratto. In sopralluogo il calcolo si fa sulle vostre bollette.</p>
+        <p class="nota">Rendimento della caldaia 92%, potere calorifico del gas 9,45 kWh per metro cubo. Senza quota fissa, imposte e manutenzione, che cambiano da contratto a contratto.</p>
       </div>
+    </div>
+
+    <div style="height:1px;background:rgba(7,18,31,.12);margin:clamp(40px,5vw,64px) 0"></div>
+
+    <p class="occhiello" style="margin-bottom:22px">2 &middot; Il fotovoltaico</p>
+    <div class="calcolatore rivela">
+      <div class="campi">
+        <div class="campo">
+          <label for="kwp">Impianto fotovoltaico <b id="v-kwp">6,0 kWp</b></label>
+          <input type="range" id="kwp" min="20" max="200" step="5" value="60">
+        </div>
+        <div class="campo">
+          <label for="autoconsumo">Quota consumata in casa <b id="v-autoconsumo">45%</b></label>
+          <input type="range" id="autoconsumo" min="20" max="85" step="5" value="45">
+        </div>
+        <p class="nota" style="margin-top:4px">La quota consumata in casa è il cuore del fotovoltaico: l'energia che usate mentre il sole produce vale quanto quella che non comprate, mentre quella venduta alla rete vale molto meno. Con una pompa di calore, un accumulo o la ricarica dell'auto questa quota sale parecchio.</p>
+      </div>
+
+      <div>
+        <div class="esito">
+          <div class="esito-riga">
+            <span>Produce in un anno</span>
+            <b id="produzione">—</b>
+          </div>
+          <div class="esito-riga">
+            <span>Energia usata in casa</span>
+            <b id="usata-in-casa">—</b>
+          </div>
+          <div class="esito-riga">
+            <span>Di cui alla pompa di calore, d'inverno</span>
+            <b id="alla-pompa">—</b>
+          </div>
+          <div class="esito-riga esito-risparmio">
+            <span>Beneficio in bolletta ogni anno</span>
+            <b id="beneficio-fv">—</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="esito rivela" style="margin-top:clamp(30px,4vw,48px)">
+      <div class="esito-riga esito-risparmio" style="padding:30px 32px">
+        <span><strong>Riscaldamento con pompa di calore e fotovoltaico</strong><br><span style="font-size:.88rem;opacity:.75">quello che resta da pagare in un anno, tolta la quota che copre il sole</span></span>
+        <b id="totale-con-fv" style="font-size:2rem">—</b>
+      </div>
+    </div>
+
+    <p class="nota">Il fotovoltaico è calcolato su una produzione di circa 1.100 kWh all'anno per ogni kWp installato, valore tipico di un impianto ben esposto in Nord Italia, e sull'energia venduta alla rete valorizzata intorno a 0,10 €/kWh. Nella stagione di riscaldamento il sole produce molto meno: il conto considera che circa un quarto della produzione annua arrivi d'inverno, quando la pompa di calore lavora. Sono valori medi: in sopralluogo si usano l'inclinazione e l'orientamento veri del vostro tetto e le vostre bollette.</p>
+
     </div>
   </div>
 </section>

@@ -153,18 +153,31 @@
       fabbisogno: calc.querySelector("#fabbisogno"),
       gas: calc.querySelector("#prezzo-gas"),
       luce: calc.querySelector("#prezzo-luce"),
-      scop: calc.querySelector("#scop")
+      scop: calc.querySelector("#scop"),
+      kwp: calc.querySelector("#kwp"),
+      autoconsumo: calc.querySelector("#autoconsumo")
     };
     var mostra = {
       fabbisogno: calc.querySelector("#v-fabbisogno"),
       gas: calc.querySelector("#v-gas"),
       luce: calc.querySelector("#v-luce"),
       scop: calc.querySelector("#v-scop"),
+      kwp: calc.querySelector("#v-kwp"),
+      autoconsumo: calc.querySelector("#v-autoconsumo"),
       costoGas: calc.querySelector("#costo-gas"),
       costoPdc: calc.querySelector("#costo-pdc"),
       differenza: calc.querySelector("#differenza"),
-      etichetta: calc.querySelector("#etichetta-differenza")
+      etichetta: calc.querySelector("#etichetta-differenza"),
+      produzione: calc.querySelector("#produzione"),
+      usataInCasa: calc.querySelector("#usata-in-casa"),
+      allaPompa: calc.querySelector("#alla-pompa"),
+      beneficioFv: calc.querySelector("#beneficio-fv"),
+      totaleConFv: calc.querySelector("#totale-con-fv")
     };
+
+    var RESA_FV = 1100;        // kWh prodotti in un anno da 1 kWp, Nord Italia
+    var VALORE_IMMESSA = 0.10; // euro per kWh venduto alla rete
+    var QUOTA_INVERNO = 0.25;  // quanta della produzione annua cade nella stagione di riscaldamento
 
     var euro = new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
     var numero = new Intl.NumberFormat("it-IT");
@@ -193,6 +206,27 @@
       mostra.etichetta.textContent = differenza >= 0
         ? "Risparmio con la pompa di calore"
         : "In questo caso costa di più la pompa di calore";
+
+      // --- fotovoltaico ---
+      var kwp = parseFloat(campi.kwp.value) / 10;
+      var quota = parseFloat(campi.autoconsumo.value) / 100;
+
+      var produzione = kwp * RESA_FV;
+      var autoconsumata = produzione * quota;
+      // d'inverno il sole produce molto meno: solo una parte della produzione
+      // annua puo' finire davvero nella pompa di calore
+      var allaPompa = Math.min(autoconsumata * QUOTA_INVERNO, kwhElettrici);
+      var immessa = produzione - autoconsumata;
+      var beneficio = autoconsumata * prezzoLuce + immessa * VALORE_IMMESSA;
+      var spesaPdcConFv = (kwhElettrici - allaPompa) * prezzoLuce;
+
+      mostra.kwp.textContent = decimali.format(kwp) + " kWp";
+      mostra.autoconsumo.textContent = Math.round(quota * 100) + "%";
+      mostra.produzione.textContent = numero.format(Math.round(produzione)) + " kWh";
+      mostra.usataInCasa.textContent = numero.format(Math.round(autoconsumata)) + " kWh";
+      mostra.allaPompa.textContent = numero.format(Math.round(allaPompa)) + " kWh";
+      mostra.beneficioFv.textContent = euro.format(beneficio);
+      mostra.totaleConFv.textContent = euro.format(spesaPdcConFv);
     }
 
     Object.keys(campi).forEach(function (k) {
