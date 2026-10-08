@@ -78,12 +78,13 @@
   <div class="contenitore">
     <div class="griglia griglia-2" style="gap:clamp(30px,5vw,70px);align-items:start">
       <div class="rivela">
-        <p class="occhiello">Due competenze, un impianto solo</p>
-        <h2>Il calore è la nostra specialità.<br>La corrente, la seconda metà del lavoro.</h2>
+        <p class="occhiello">Due mestieri, un progetto solo</p>
+        <h2>Il calore e la corrente.<br>Fatti bene tutti e due.</h2>
       </div>
       <div class="rivela">
-        <p class="guida">Il termico è il mestiere di casa: pompe di calore, geotermico, climatizzazione, centrali termiche. È la parte dove si vede subito chi sa dimensionare e chi tira a indovinare.</p>
-        <p class="guida">Accanto c'è il fotovoltaico, progettato insieme all'impianto termico e non dopo: la pompa di calore consuma corrente proprio nelle ore in cui il tetto la produce. Due impianti pensati insieme rendono molto più di due impianti messi uno vicino all'altro.</p>
+        <p class="guida"><strong>Il termico</strong> è dove si vede subito chi sa dimensionare e chi tira a indovinare: pompe di calore, geotermico, climatizzazione, centrali termiche progettate stanza per stanza.</p>
+        <p class="guida"><strong>Il fotovoltaico</strong> è l'altra metà, con la stessa cura: moduli, inverter, accumulo e ricarica dimensionati sui kWh che consumate davvero, letti dalle vostre bollette.</p>
+        <p class="guida">Li progettiamo nello stesso momento, non uno dopo l'altro: la pompa di calore consuma corrente proprio nelle ore in cui il tetto la produce. Due impianti pensati insieme rendono molto più di due impianti messi uno vicino all'altro.</p>
       </div>
     </div>
   </div>
@@ -93,8 +94,8 @@
   <div class="contenitore">
     <div class="griglia griglia-3">
       <div class="scheda rivela">
-        <h3>Specializzati sul termico</h3>
-        <p class="grigio">Non siamo un'azienda che fa un po' di tutto e anche gli impianti. Il termico è il mestiere: ci studiamo sopra, lo progettiamo e lo mettiamo a punto fino all'ultimo grado.</p>
+        <h3>Specializzati, non tuttofare</h3>
+        <p class="grigio">Facciamo due cose e le facciamo per mestiere: impianti termici e fotovoltaici. Ci studiamo sopra, li progettiamo e li mettiamo a punto fino all'ultimo grado e all'ultimo kWh.</p>
       </div>
       <div class="scheda rivela">
         <h3>Precisi in cantiere</h3>
@@ -204,6 +205,104 @@
         <span><i style="background:#f2b125"></i> Calore verso casa</span>
         <span><i style="background:#6fa8c7"></i> Ritorno più freddo</span>
         <span><i style="background:#ffd36b"></i> Corrente dal fotovoltaico</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sezione">
+  <div class="contenitore">
+    <div class="riga-titolo">
+      <p class="occhiello">Come funziona</p>
+      <h2>Il sole che alimenta la casa</h2>
+      <p class="guida grigio" style="margin-top:18px">Il fotovoltaico non è un pannello sul tetto: è una catena. Quello che conta è quanta di quell'energia riuscite a usare in casa invece di regalarla alla rete — ed è esattamente quello su cui dimensioniamo.</p>
+    </div>
+
+    <div class="schema rivela">
+      <svg viewBox="0 0 980 340" role="img" aria-label="Schema di un impianto fotovoltaico: sole, moduli, inverter, casa, accumulo e ricarica dell'auto">
+        <defs>
+          <linearGradient id="corrente" x1="0" x2="1">
+            <stop offset="0" stop-color="#f2b125" stop-opacity="0.35"/>
+            <stop offset="1" stop-color="#ffd36b"/>
+          </linearGradient>
+        </defs>
+
+        <!-- sole -->
+        <g class="pulsa">
+          <circle cx="92" cy="62" r="24" fill="#f2b125" opacity="0.9"/>
+          <g stroke="#f2b125" stroke-width="2.4" stroke-linecap="round" opacity="0.75">
+            <path d="M92 22v-13M92 102v13M136 62h13M48 62H35M123 31l9-9M52 93l-9 9M123 93l9 9M52 31l-9-9"/>
+          </g>
+        </g>
+
+        <!-- raggi verso i moduli -->
+        <path class="flusso-caldo" d="M104 96 L146 150 M132 92 L176 146 M160 88 L206 142"
+              fill="none" stroke="#ffd36b" stroke-width="2.2" opacity="0.55" stroke-linecap="round"/>
+
+        <!-- moduli -->
+        <g>
+          <path d="M58 258 L132 158 L256 158 L196 258 Z" fill="#02356e" opacity="0.6" stroke="#9fb0c2" stroke-width="1.6"/>
+          <path d="M88 258 L154 158M118 258 L176 158M148 258 L198 158M178 258 L220 158M74 225 L224 225M100 192 L242 192"
+                stroke="#9fb0c2" stroke-width="1" opacity="0.55"/>
+          <text x="58" y="292" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">Moduli</text>
+          <text x="58" y="312" fill="#5b6878" font-family="Manrope, sans-serif" font-size="12.5">corrente continua</text>
+        </g>
+
+        <!-- modulo -> inverter -->
+        <path class="flusso-caldo" d="M258 208 H 330" fill="none" stroke="url(#corrente)" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- inverter -->
+        <g>
+          <rect x="330" y="158" width="78" height="104" rx="12" fill="#0c1e33" stroke="#9fb0c2" stroke-width="1.6"/>
+          <path d="M350 212 q 9 -16 19 0 t 19 0" fill="none" stroke="#f2b125" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M350 186 H 388" stroke="#6fa8c7" stroke-width="2.4" stroke-linecap="round"/>
+          <text x="330" y="292" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">Inverter</text>
+          <text x="330" y="312" fill="#5b6878" font-family="Manrope, sans-serif" font-size="12.5">la rende usabile in casa</text>
+        </g>
+
+        <!-- inverter -> casa -->
+        <path class="flusso-caldo" d="M410 208 H 486" fill="none" stroke="url(#corrente)" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- casa -->
+        <g>
+          <path d="M486 262 V 190 L 566 142 L 646 190 V 262 Z" fill="#0c1e33" stroke="#9fb0c2" stroke-width="1.6"/>
+          <rect x="548" y="214" width="36" height="48" rx="3" fill="none" stroke="#f2b125" stroke-width="1.8" opacity="0.9"/>
+          <circle cx="576" cy="238" r="2.6" fill="#f2b125"/>
+          <text x="486" y="292" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">Casa</text>
+          <text x="486" y="312" fill="#5b6878" font-family="Manrope, sans-serif" font-size="12.5">autoconsumo: qui vale di più</text>
+        </g>
+
+        <!-- casa -> accumulo -->
+        <path class="flusso-caldo" d="M648 222 H 714" fill="none" stroke="url(#corrente)" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- accumulo -->
+        <g>
+          <rect x="714" y="176" width="94" height="86" rx="12" fill="#0c1e33" stroke="#9fb0c2" stroke-width="1.6"/>
+          <rect x="730" y="196" width="62" height="12" rx="3" fill="#f2b125" opacity="0.9"/>
+          <rect x="730" y="214" width="62" height="12" rx="3" fill="#f2b125" opacity="0.6"/>
+          <rect x="730" y="232" width="62" height="12" rx="3" fill="#9fb0c2" opacity="0.35"/>
+          <text x="714" y="292" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">Accumulo</text>
+          <text x="714" y="312" fill="#5b6878" font-family="Manrope, sans-serif" font-size="12.5">il sole di oggi, stasera</text>
+        </g>
+
+        <!-- accumulo -> ricarica -->
+        <path class="flusso-freddo" d="M810 240 H 866" fill="none" stroke="#6fa8c7" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- colonnina e auto -->
+        <g>
+          <rect x="866" y="176" width="26" height="66" rx="8" fill="#0c1e33" stroke="#9fb0c2" stroke-width="1.6"/>
+          <path d="M879 192 l -6 12 h 11 l -6 12" fill="none" stroke="#f2b125" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M904 256 q 6 -26 22 -26 h 22 q 14 0 18 26 Z" fill="none" stroke="#9fb0c2" stroke-width="1.6"/>
+          <circle cx="916" cy="258" r="6" fill="none" stroke="#9fb0c2" stroke-width="1.6"/>
+          <circle cx="954" cy="258" r="6" fill="none" stroke="#9fb0c2" stroke-width="1.6"/>
+          <text x="866" y="292" fill="#9fb0c2" font-family="Manrope, sans-serif" font-size="14">Ricarica</text>
+          <text x="866" y="312" fill="#5b6878" font-family="Manrope, sans-serif" font-size="12.5">quando il sole produce</text>
+        </g>
+      </svg>
+
+      <div class="legenda">
+        <span><i style="background:#f2b125"></i> Energia prodotta e consumata in casa</span>
+        <span><i style="background:#6fa8c7"></i> Energia messa da parte</span>
       </div>
     </div>
   </div>
