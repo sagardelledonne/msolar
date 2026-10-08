@@ -151,82 +151,77 @@
   if (calc) {
     var campi = {
       fabbisogno: calc.querySelector("#fabbisogno"),
+      luceCasa: calc.querySelector("#luce-casa"),
       gas: calc.querySelector("#prezzo-gas"),
       luce: calc.querySelector("#prezzo-luce"),
-      scop: calc.querySelector("#scop"),
-      kwp: calc.querySelector("#kwp"),
-      autoconsumo: calc.querySelector("#autoconsumo")
+      kwp: calc.querySelector("#kwp")
     };
     var mostra = {
       fabbisogno: calc.querySelector("#v-fabbisogno"),
+      luceCasa: calc.querySelector("#v-luce-casa"),
       gas: calc.querySelector("#v-gas"),
       luce: calc.querySelector("#v-luce"),
-      scop: calc.querySelector("#v-scop"),
       kwp: calc.querySelector("#v-kwp"),
-      autoconsumo: calc.querySelector("#v-autoconsumo"),
-      costoGas: calc.querySelector("#costo-gas"),
-      costoPdc: calc.querySelector("#costo-pdc"),
+      costoOggi: calc.querySelector("#costo-oggi"),
+      costoDomani: calc.querySelector("#costo-domani"),
       differenza: calc.querySelector("#differenza"),
       etichetta: calc.querySelector("#etichetta-differenza"),
-      produzione: calc.querySelector("#produzione"),
-      usataInCasa: calc.querySelector("#usata-in-casa"),
-      allaPompa: calc.querySelector("#alla-pompa"),
-      beneficioFv: calc.querySelector("#beneficio-fv"),
-      totaleConFv: calc.querySelector("#totale-con-fv")
+      dettaglio: calc.querySelector("#dettaglio-fv")
     };
 
-    var RESA_FV = 1100;        // kWh prodotti in un anno da 1 kWp, Nord Italia
-    var VALORE_IMMESSA = 0.10; // euro per kWh venduto alla rete
-    var QUOTA_INVERNO = 0.25;  // quanta della produzione annua cade nella stagione di riscaldamento
+    var SCOP = 4.0;             // rendimento stagionale della pompa di calore
+    var RESA_CALDAIA = 0.92;    // rendimento della caldaia a gas
+    var PCI_GAS = 9.45;         // kWh in un metro cubo di gas
+    var RESA_FV = 1100;         // kWh in un anno da 1 kWp, Nord Italia
+    var QUOTA_AUTOCONSUMO = 0.45;
+    var VALORE_IMMESSA = 0.10;  // euro per kWh venduto alla rete
 
     var euro = new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
     var numero = new Intl.NumberFormat("it-IT");
     var decimali = new Intl.NumberFormat("it-IT", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    var unDecimale = new Intl.NumberFormat("it-IT", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 
     function conta() {
-      var fabbisogno = parseFloat(campi.fabbisogno.value);   // kWh termici all'anno
-      var prezzoGas = parseFloat(campi.gas.value) / 100;      // euro al metro cubo
-      var prezzoLuce = parseFloat(campi.luce.value) / 100;    // euro al kWh
-      var scop = parseFloat(campi.scop.value) / 10;
+      var fabbisogno = parseFloat(campi.fabbisogno.value);   // kWh di calore all'anno
+      var luceCasa = parseFloat(campi.luceCasa.value);       // kWh elettrici di casa all'anno
+      var prezzoGas = parseFloat(campi.gas.value) / 100;     // euro al metro cubo
+      var prezzoLuce = parseFloat(campi.luce.value) / 100;   // euro al kWh
+      var kwp = parseFloat(campi.kwp.value) / 10;
 
-      var smc = fabbisogno / (9.45 * 0.92);                   // potere calorifico x rendimento caldaia
-      var costoGas = smc * prezzoGas;
-      var kwhElettrici = fabbisogno / scop;
-      var costoPdc = kwhElettrici * prezzoLuce;
-      var differenza = costoGas - costoPdc;
+      // oggi: caldaia a gas per il calore, luce comprata tutta dalla rete
+      var smc = fabbisogno / (PCI_GAS * RESA_CALDAIA);
+      var costoOggi = smc * prezzoGas + luceCasa * prezzoLuce;
+
+      // domani: pompa di calore piu' fotovoltaico
+      var kwhPompa = fabbisogno / SCOP;
+      var consumoTotale = kwhPompa + luceCasa;
+      var produzione = kwp * RESA_FV;
+      var autoconsumo = Math.min(produzione * QUOTA_AUTOCONSUMO, consumoTotale);
+      var immessa = produzione - autoconsumo;
+      var costoDomani = (consumoTotale - autoconsumo) * prezzoLuce - immessa * VALORE_IMMESSA;
+
+      var differenza = costoOggi - costoDomani;
 
       mostra.fabbisogno.textContent = numero.format(fabbisogno) + " kWh";
+      mostra.luceCasa.textContent = numero.format(luceCasa) + " kWh";
       mostra.gas.textContent = decimali.format(prezzoGas) + " €/Smc";
       mostra.luce.textContent = decimali.format(prezzoLuce) + " €/kWh";
-      mostra.scop.textContent = decimali.format(scop);
+      mostra.kwp.textContent = kwp > 0 ? unDecimale.format(kwp) + " kWp" : "nessuno";
 
-      mostra.costoGas.textContent = euro.format(costoGas);
-      mostra.costoPdc.textContent = euro.format(costoPdc);
+      mostra.costoOggi.textContent = euro.format(costoOggi);
+      mostra.costoDomani.textContent = euro.format(costoDomani);
       mostra.differenza.textContent = euro.format(Math.abs(differenza));
       mostra.etichetta.textContent = differenza >= 0
-        ? "Risparmio con la pompa di calore"
-        : "In questo caso costa di più la pompa di calore";
+        ? "Risparmio ogni anno"
+        : "In questo caso si spende di piu'";
 
-      // --- fotovoltaico ---
-      var kwp = parseFloat(campi.kwp.value) / 10;
-      var quota = parseFloat(campi.autoconsumo.value) / 100;
-
-      var produzione = kwp * RESA_FV;
-      var autoconsumata = produzione * quota;
-      // d'inverno il sole produce molto meno: solo una parte della produzione
-      // annua puo' finire davvero nella pompa di calore
-      var allaPompa = Math.min(autoconsumata * QUOTA_INVERNO, kwhElettrici);
-      var immessa = produzione - autoconsumata;
-      var beneficio = autoconsumata * prezzoLuce + immessa * VALORE_IMMESSA;
-      var spesaPdcConFv = (kwhElettrici - allaPompa) * prezzoLuce;
-
-      mostra.kwp.textContent = decimali.format(kwp) + " kWp";
-      mostra.autoconsumo.textContent = Math.round(quota * 100) + "%";
-      mostra.produzione.textContent = numero.format(Math.round(produzione)) + " kWh";
-      mostra.usataInCasa.textContent = numero.format(Math.round(autoconsumata)) + " kWh";
-      mostra.allaPompa.textContent = numero.format(Math.round(allaPompa)) + " kWh";
-      mostra.beneficioFv.textContent = euro.format(beneficio);
-      mostra.totaleConFv.textContent = euro.format(spesaPdcConFv);
+      mostra.dettaglio.innerHTML = kwp > 0
+        ? "Il fotovoltaico da " + unDecimale.format(kwp) + " kWp produce circa "
+          + numero.format(Math.round(produzione)) + " kWh all'anno: ne usate in casa "
+          + numero.format(Math.round(autoconsumo)) + " kWh, il resto va in rete. "
+          + "La pompa di calore consuma " + numero.format(Math.round(kwhPompa)) + " kWh elettrici al posto del gas."
+        : "Senza fotovoltaico la pompa di calore consuma " + numero.format(Math.round(kwhPompa))
+          + " kWh elettrici all'anno. Muovete l'ultimo cursore per vedere cosa cambia aggiungendo il solare.";
     }
 
     Object.keys(campi).forEach(function (k) {

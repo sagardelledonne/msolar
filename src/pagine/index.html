@@ -254,99 +254,52 @@
   <div class="contenitore">
     <div class="riga-titolo">
       <p class="occhiello">Fate il conto da soli</p>
-      <h2>Gas, pompa di calore,<br>fotovoltaico: i conti in chiaro</h2>
-      <p class="guida grigio" style="margin-top:18px">Muovete i cursori con i vostri numeri: il calore che consumate in un anno, i prezzi che pagate oggi e l'impianto fotovoltaico che state valutando. È un ordine di grandezza, non un preventivo &mdash; ma è un ordine di grandezza fatto con le formule giuste.</p>
+      <h2>Quanto spendete oggi,<br>quanto spendereste domani</h2>
+      <p class="guida grigio" style="margin-top:18px">Da una parte la casa di oggi: caldaia a gas e nessun fotovoltaico. Dall'altra la stessa casa con pompa di calore e fotovoltaico abbinati. Muovete i cursori con i vostri numeri. È un ordine di grandezza, non un preventivo &mdash; ma fatto con le formule giuste.</p>
     </div>
 
-    <div data-calcolatore>
-
-    <p class="occhiello" style="margin-bottom:22px">1 &middot; Il riscaldamento</p>
-    <div class="calcolatore rivela">
+    <div class="calcolatore rivela" data-calcolatore>
       <div class="campi">
         <div class="campo">
           <label for="fabbisogno">Calore che consumate in un anno <b id="v-fabbisogno">12.000 kWh</b></label>
           <input type="range" id="fabbisogno" min="4000" max="30000" step="500" value="12000">
         </div>
         <div class="campo">
-          <label for="prezzo-gas">Prezzo del gas <b id="v-gas">1,10 €/Smc</b></label>
+          <label for="luce-casa">Luce che consumate in un anno <b id="v-luce-casa">2.700 kWh</b></label>
+          <input type="range" id="luce-casa" min="1000" max="8000" step="100" value="2700">
+        </div>
+        <div class="campo">
+          <label for="prezzo-gas">Prezzo del gas <b id="v-gas">1,10 &euro;/Smc</b></label>
           <input type="range" id="prezzo-gas" min="60" max="180" step="5" value="110">
         </div>
         <div class="campo">
-          <label for="prezzo-luce">Prezzo della luce <b id="v-luce">0,28 €/kWh</b></label>
+          <label for="prezzo-luce">Prezzo della luce <b id="v-luce">0,28 &euro;/kWh</b></label>
           <input type="range" id="prezzo-luce" min="15" max="45" step="1" value="28">
         </div>
         <div class="campo">
-          <label for="scop">Rendimento della pompa di calore (SCOP) <b id="v-scop">4,00</b></label>
-          <input type="range" id="scop" min="25" max="55" step="1" value="40">
-        </div>
-      </div>
-
-      <div>
-        <div class="esito">
-          <div class="esito-riga">
-            <span>Con la caldaia a gas</span>
-            <b id="costo-gas">—</b>
-          </div>
-          <div class="esito-riga">
-            <span>Con la pompa di calore</span>
-            <b id="costo-pdc">—</b>
-          </div>
-          <div class="esito-riga esito-risparmio">
-            <span id="etichetta-differenza">Risparmio con la pompa di calore</span>
-            <b id="differenza">—</b>
-          </div>
-        </div>
-        <p class="nota">Rendimento della caldaia 92%, potere calorifico del gas 9,45 kWh per metro cubo. Senza quota fissa, imposte e manutenzione, che cambiano da contratto a contratto.</p>
-      </div>
-    </div>
-
-    <div style="height:1px;background:rgba(7,18,31,.12);margin:clamp(40px,5vw,64px) 0"></div>
-
-    <p class="occhiello" style="margin-bottom:22px">2 &middot; Il fotovoltaico</p>
-    <div class="calcolatore rivela">
-      <div class="campi">
-        <div class="campo">
           <label for="kwp">Impianto fotovoltaico <b id="v-kwp">6,0 kWp</b></label>
-          <input type="range" id="kwp" min="20" max="200" step="5" value="60">
+          <input type="range" id="kwp" min="0" max="200" step="5" value="60">
         </div>
-        <div class="campo">
-          <label for="autoconsumo">Quota consumata in casa <b id="v-autoconsumo">45%</b></label>
-          <input type="range" id="autoconsumo" min="20" max="85" step="5" value="45">
-        </div>
-        <p class="nota" style="margin-top:4px">La quota consumata in casa è il cuore del fotovoltaico: l'energia che usate mentre il sole produce vale quanto quella che non comprate, mentre quella venduta alla rete vale molto meno. Con una pompa di calore, un accumulo o la ricarica dell'auto questa quota sale parecchio.</p>
       </div>
 
       <div>
         <div class="esito">
           <div class="esito-riga">
-            <span>Produce in un anno</span>
-            <b id="produzione">—</b>
+            <span>Oggi<br><span style="font-size:.85rem;opacity:.7">caldaia a gas, niente fotovoltaico</span></span>
+            <b id="costo-oggi">&mdash;</b>
           </div>
           <div class="esito-riga">
-            <span>Energia usata in casa</span>
-            <b id="usata-in-casa">—</b>
+            <span>Domani<br><span style="font-size:.85rem;opacity:.7">pompa di calore e fotovoltaico abbinati</span></span>
+            <b id="costo-domani">&mdash;</b>
           </div>
-          <div class="esito-riga">
-            <span>Di cui alla pompa di calore, d'inverno</span>
-            <b id="alla-pompa">—</b>
-          </div>
-          <div class="esito-riga esito-risparmio">
-            <span>Beneficio in bolletta ogni anno</span>
-            <b id="beneficio-fv">—</b>
+          <div class="esito-riga esito-risparmio" style="padding:28px 30px">
+            <span id="etichetta-differenza">Risparmio ogni anno</span>
+            <b id="differenza" style="font-size:2rem">&mdash;</b>
           </div>
         </div>
+        <p class="nota" id="dettaglio-fv">&nbsp;</p>
+        <p class="nota">Conti su un anno intero, riscaldamento e luce di casa insieme. Caldaia al 92% di rendimento, gas a 9,45 kWh per metro cubo, pompa di calore con rendimento stagionale 4,0. Fotovoltaico: 1.100 kWh all&rsquo;anno per ogni kWp in Nord Italia, 45% consumato in casa, il resto venduto alla rete intorno a 0,10 &euro;/kWh. Non ci sono quote fisse e imposte, che cambiano da contratto a contratto: in sopralluogo il conto si rifà sulle vostre bollette.</p>
       </div>
-    </div>
-
-    <div class="esito rivela" style="margin-top:clamp(30px,4vw,48px)">
-      <div class="esito-riga esito-risparmio" style="padding:30px 32px">
-        <span><strong>Riscaldamento con pompa di calore e fotovoltaico</strong><br><span style="font-size:.88rem;opacity:.75">quello che resta da pagare in un anno, tolta la quota che copre il sole</span></span>
-        <b id="totale-con-fv" style="font-size:2rem">—</b>
-      </div>
-    </div>
-
-    <p class="nota">Il fotovoltaico è calcolato su una produzione di circa 1.100 kWh all'anno per ogni kWp installato, valore tipico di un impianto ben esposto in Nord Italia, e sull'energia venduta alla rete valorizzata intorno a 0,10 €/kWh. Nella stagione di riscaldamento il sole produce molto meno: il conto considera che circa un quarto della produzione annua arrivi d'inverno, quando la pompa di calore lavora. Sono valori medi: in sopralluogo si usano l'inclinazione e l'orientamento veri del vostro tetto e le vostre bollette.</p>
-
     </div>
   </div>
 </section>
